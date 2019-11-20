@@ -1,0 +1,10 @@
+#RewriteEngine on
+
+#RewriteRule ^([a-zA-Z0-9]+) index.php?key=$1 [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+#for online website change these to only /index.php?key=$1
+RewriteRule ^(.*)$ index.php?key=$1 [QSA,L]
